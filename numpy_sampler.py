@@ -80,6 +80,62 @@ def applying_attributes_multiple_dimensions(a):
     print("Before changing the data type : {}".format(a.dtype))
     print("After changing the data type using a.astype(np.float32) : {}".format(a.astype(np.float32).dtype))
 
+def demo_np_creation():
+    print("****** np.empty Usage ******\n")
+    a = np.empty(shape=[2, 2], dtype=int)
+    print(a)
+    print("\n")
+
+    print("****** np.eye Usage ******\n")
+
+    # N = row count
+    # M = col count
+
+    b = np.eye(N=2, M=2, k=0, dtype=int)
+    print("For k=0\n")
+    print(b)
+    print("\n")
+
+    c = np.eye(N=2, M=2, k=1)
+    print("For k=1\n")
+    print(c)
+    print("\n")
+
+    print("****** np.identity Usage ******\n")
+
+    # n is the dimension of square numpy array
+
+    d = np.identity(n=2, dtype=float)
+
+    print(d)
+    print("\n")
+
+    print("****** np.linspace Usage ******\n")
+    # endpoint=True is default -> (stop-start)/(num-1)
+    # endpoint=False -> (stop-start)/num
+
+    e = np.linspace(start=1.0, stop=5.0, num=5) # 5 numbers including stop value 5.0
+    print("Including the stop element\n")
+    print(e)
+    print("\n")
+
+    f = np.linspace(start=1.0, stop=5.0, num=5, endpoint=False) # 5 numbers excluding 5.0, spaced by (5-1)/5 = 0.8
+    print("Excluding the stop element\n")
+    print(f)
+    print("\n")
+
+    print("****** np.ones Usage ******\n")
+    g = np.ones(shape=(5,), dtype=int)
+    print(g)
+    print("\n")
+
+    print("****** np.zeros Usage ******\n")
+
+    h = np.zeros(shape=(5, 5), dtype=int)
+    print(h)
+    print("\n")
+
 if __name__ == "__main__":
     operate_a()
     operate_b()
+    demo_np_creation()
